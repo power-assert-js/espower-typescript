@@ -1,0 +1,25 @@
+{
+  "name": "espower-typescript",
+  "version": "0.1.0",
+  "description": "power-assert instrumentor for TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --require './guess' test/*_test.ts"
+  },
+  "keywords": [
+    "power-assert",
+    "typescript"
+  ],
+  "author": "Teppei Sato <teppeis@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "mocha": "^2.2.4",
+    "power-assert": "^0.11.0"
+  },
+  "dependencies": {
+    "espower-source": "^0.10.0",
+    "minimatch": "^2.0.7",
+    "typescript-simple": "^2.0.0-beta.1"
+  }
+}
