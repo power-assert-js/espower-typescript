@@ -23,9 +23,9 @@ $ mocha --compilers ts:espower-typescript/guess test/**/*.ts
 * Includes [yosuke-furukawa/espower-traceur](https://github.com/yosuke-furukawa/espower-traceur)
 * Includes [azu/espower-babel](https://github.com/azu/espower-babel)
 
-[npm-image]: https://img.shields.io/npm/v/espower-babel.svg
-[npm-url]: https://npmjs.org/package/espower-babel
-[travis-image]: https://travis-ci.org/teppeis/espower-babel.svg?branch=master
-[travis-url]: https://travis-ci.org/teppeis/espower-babel
-[deps-image]: https://david-dm.org/teppeis/espower-babel.svg
-[deps-url]: https://david-dm.org/teppeis/espower-babel
+[npm-image]: https://img.shields.io/npm/v/espower-typescript.svg
+[npm-url]: https://npmjs.org/package/espower-typescript
+[travis-image]: https://travis-ci.org/teppeis/espower-typescript.svg?branch=master
+[travis-url]: https://travis-ci.org/teppeis/espower-typescript
+[deps-image]: https://david-dm.org/teppeis/espower-typescript.svg
+[deps-url]: https://david-dm.org/teppeis/espower-typescript
