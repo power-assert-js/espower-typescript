@@ -17,6 +17,32 @@ $ npm install -D espower-typescript
 $ mocha --compilers ts:espower-typescript/guess test/**/*.ts
 ```
 
+### If your tests are not in test dir
+
+You can set test directory in your `package.json`
+
+```json
+{
+    "name": "your-module",
+    "description": "Your module",
+    "version": "0.0.1",
+    "directories": {
+        "test": "spec/"
+    },
+...
+}
+```
+
+Then, run mocha with `--compilers js:espower-typescript/guess`
+
+    $ mocha --compilers js:espower-typescript/guess spec/**/*.js
+
+Note: `'espower-typescript/guess'` is inspired by [intelli-espower-loader](https://github.com/azu/intelli-espower-loader)
+
+### tsconfig.json
+
+TODO
+
 ## License
 
 * MIT License: Teppei Sato &lt;teppeis@gmail.com&gt;
