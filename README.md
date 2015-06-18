@@ -53,7 +53,7 @@ TODO
 
 [npm-image]: https://img.shields.io/npm/v/espower-typescript.svg
 [npm-url]: https://npmjs.org/package/espower-typescript
-[travis-image]: https://travis-ci.org/teppeis/espower-typescript.svg?branch=master
-[travis-url]: https://travis-ci.org/teppeis/espower-typescript
-[deps-image]: https://david-dm.org/teppeis/espower-typescript.svg
-[deps-url]: https://david-dm.org/teppeis/espower-typescript
+[travis-image]: https://travis-ci.org/power-assert-js/espower-typescript.svg?branch=master
+[travis-url]: https://travis-ci.org/power-assert-js/espower-typescript
+[deps-image]: https://david-dm.org/power-assert-js/espower-typescript.svg
+[deps-url]: https://david-dm.org/power-assert-js/espower-typescript
