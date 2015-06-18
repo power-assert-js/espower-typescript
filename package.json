@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/teppeis/espower-typescript"
+    "url": "https://github.com/power-assert-js/espower-typescript"
   },
   "bugs": {
-    "url": "https://github.com/teppeis/espower-typescript/issues"
+    "url": "https://github.com/power-assert-js/espower-typescript/issues"
   },
-  "homepage": "https://github.com/teppeis/espower-typescript",
+  "homepage": "https://github.com/power-assert-js/espower-typescript",
   "keywords": [
     "power-assert",
     "typescript"
