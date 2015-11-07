@@ -9,10 +9,7 @@ var TypeScriptSimple = require('typescript-simple').TypeScriptSimple;
 function espowerTypeScript(options) {
   var separator = (options.pattern.lastIndexOf('/', 0) === 0) ? '' : '/';
   var pattern = options.cwd + separator + options.pattern;
-  // TODO: load tsconfig.json
-  var tsconfig = options.tsconfig || {};
-  var compilerOptions = tsconfig.compilerOptions || {};
-  var tss = new TypeScriptSimple(compilerOptions, false);
+  var tss = new TypeScriptSimple(options.compilerOptions, false);
 
   require.extensions['.ts'] = function(localModule, filepath) {
     var result = tss.compile(fs.readFileSync(filepath, 'utf-8'));

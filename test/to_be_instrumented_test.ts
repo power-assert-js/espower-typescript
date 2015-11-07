@@ -1,3 +1,5 @@
+'use strict';
+
 let assert = require('power-assert')
 let expect = require('expect.js')
 

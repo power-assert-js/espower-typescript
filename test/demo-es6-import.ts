@@ -1,6 +1,4 @@
-// Run with Node.js v5+
-
-'use strict';
+import hello from './lib/hello';
 
 let assert = require('power-assert');
 
@@ -16,17 +14,17 @@ describe('Person', () => {
   let alice = new Person('alice', 3);
   let bob = new Person('bob', 5);
   it('#getAge', () => {
-    assert(alice.getAge() === 3);
-  });
+    assert(alice.getAge() === 3)
+  })
   it('#name', () => {
-    assert(alice.name === 'alice');
-  });
+    assert(alice.name === 'alice')
+  })
   // failed
   it('#mistake', () => {
-    assert(alice.name === bob.name);
-  });
+    assert(alice.name === bob.name)
+  })
   // failed
-  it('arrow function', () => {
-    assert(alice.name === (() => 1));
+  it('hello', () => {
+    assert(hello() === 'whoa!');
   });
-});
+})
