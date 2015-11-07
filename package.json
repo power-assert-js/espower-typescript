@@ -28,6 +28,7 @@
   "dependencies": {
     "espower-source": "^1.0.0",
     "minimatch": "^3.0.0",
+    "typescript": "1.8.0-dev.20151106",
     "typescript-simple": "^3.0.2"
   }
 }

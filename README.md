@@ -41,9 +41,11 @@ $ mocha --compilers ts:espower-typescript/guess spec/**/*.ts
 
 Note: `'espower-typescript/guess'` is inspired by [intelli-espower-loader](https://github.com/azu/intelli-espower-loader)
 
-### tsconfig.json
+### tsconfig.json and CompilerOptions
 
-TODO
+If [tsconfig.json](https://github.com/Microsoft/TypeScript/wiki/tsconfig.json) is in cwd, `guess` load it automatically.
+
+Note: only `compilerOptions` field is applied.
 
 ## License
 

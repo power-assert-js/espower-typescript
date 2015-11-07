@@ -1,7 +1,11 @@
+var fs = require('fs');
 var path = require('path');
 
+var ts = require('typescript');
+
 var pattern = 'test/**/*.ts';
-var packageData = require(path.join(process.cwd(), 'package.json'));
+var cwd = process.cwd();
+var packageData = require(path.join(cwd, 'package.json'));
 
 if (packageData &&
     typeof packageData.directories === 'object' &&
@@ -10,7 +14,30 @@ if (packageData &&
   pattern = testDir + ((testDir.lastIndexOf('/', 0) === 0) ? '' : '/') + '**/*.ts';
 }
 
+var tsconfigPath = ts.findConfigFile(cwd);
+var tsconfigBasepath = null;
+var compilerOptions = null;
+if (tsconfigPath) {
+  compilerOptions = parseTsConfig(tsconfigPath);
+  tsconfigBasepath = path.dirname(tsconfigPath);
+}
+
 require('./index')({
-    cwd: process.cwd(),
-    pattern: pattern
+    cwd: cwd,
+    pattern: pattern,
+    compilerOptions: compilerOptions,
+    basepath: tsconfigBasepath
 });
+
+function parseTsConfig(tsconfigPath) {
+  var parsed = ts.parseConfigFileTextToJson(tsconfigPath, fs.readFileSync(tsconfigPath, 'utf8'));
+  if (parsed.error) {
+    throw new Error(parsed.error.messageText);
+  }
+
+  if (!parsed.config || !parsed.config.compilerOptions) {
+    return null;
+  }
+
+  return parsed.config.compilerOptions;
+}
