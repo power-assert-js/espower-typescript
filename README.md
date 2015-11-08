@@ -43,9 +43,9 @@ Note: `'espower-typescript/guess'` is inspired by [intelli-espower-loader](https
 
 ### tsconfig.json and CompilerOptions
 
-If [tsconfig.json](https://github.com/Microsoft/TypeScript/wiki/tsconfig.json) is in cwd, `guess` load it automatically.
+If [tsconfig.json](https://github.com/Microsoft/TypeScript/wiki/tsconfig.json) is in your prject root, `'espower-typescript/guess'` loads it automatically.
 
-Note: only `compilerOptions` field is applied.
+Note: only `compilerOptions` field in tsconfig.json is applied.
 
 ## License
 
