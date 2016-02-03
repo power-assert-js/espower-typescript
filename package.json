@@ -22,13 +22,13 @@
   "license": "MIT",
   "devDependencies": {
     "expect.js": "^0.3.1",
-    "mocha": "^2.2.5",
-    "power-assert": "^1.1.0"
+    "mocha": "^2.4.5",
+    "power-assert": "^1.2.0"
   },
   "dependencies": {
-    "espower-source": "^1.0.0",
+    "espower-source": "^1.1.0",
     "minimatch": "^3.0.0",
     "typescript": "1.8.0-dev.20151106",
-    "typescript-simple": "^3.0.2"
+    "typescript-simple": "^4.0.0"
   }
 }
