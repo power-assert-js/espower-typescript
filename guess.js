@@ -14,7 +14,7 @@ if (packageData &&
   pattern = testDir + ((testDir.lastIndexOf('/', 0) === 0) ? '' : '/') + '**/*.ts';
 }
 
-var tsconfigPath = ts.findConfigFile(cwd);
+var tsconfigPath = ts.findConfigFile(cwd, fs.existsSync);
 var tsconfigBasepath = null;
 var compilerOptions = null;
 if (tsconfigPath) {
