@@ -1,6 +1,6 @@
 {
   "name": "espower-typescript",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "power-assert instrumentor for TypeScript",
   "main": "index.js",
   "scripts": {
