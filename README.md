@@ -47,6 +47,10 @@ If [tsconfig.json](https://github.com/Microsoft/TypeScript/wiki/tsconfig.json) i
 
 Note: only `compilerOptions` field in tsconfig.json is applied.
 
+### JSX/React
+
+`.tsx` files are supported.
+
 ## License
 
 * MIT License: Teppei Sato &lt;teppeis@gmail.com&gt;
