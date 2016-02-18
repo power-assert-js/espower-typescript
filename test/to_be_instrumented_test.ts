@@ -1,7 +1,8 @@
 'use strict';
 
-let assert = require('power-assert')
-let expect = require('expect.js')
+import assert = require('power-assert')
+import expect = require('expect.js')
+import MyComponent from './lib/mycomponent.tsx';
 
 describe('power-assert message', function() {
 
@@ -47,6 +48,17 @@ describe('power-assert message', function() {
                   -1       `;
     this.expectPowerAssertMessage(() => {
       assert.equal(1, minusOne);
+    }, expected);
+  });
+
+  it('jsx:react', function() {
+    let expected =
+`  assert.equal(1, mycomponent_tsx_1.default())
+                  |                 |         
+                  |                 Object{"$$typeof":Symbol(react.element),type:"input",key:null,ref:null,props:#Object#,_owner:null,_store:#Object#}
+                  Object{default:#function#}  `;
+    this.expectPowerAssertMessage(() => {
+      assert.equal(1, MyComponent());
     }, expected);
   });
 });

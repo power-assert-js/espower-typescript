@@ -13,13 +13,16 @@ function espowerTypeScript(options) {
   var compilerOptions = convertCompilerOptions(options.compilerOptions, options.basepath);
   var tss = new TypeScriptSimple(compilerOptions, false);
 
-  require.extensions['.ts'] = function(localModule, filepath) {
+  function loadTypeScript(localModule, filepath) {
     var result = tss.compile(fs.readFileSync(filepath, 'utf-8'));
     if (minimatch(filepath, pattern)) {
       result = espowerSource(result, filepath, options);
     }
     localModule._compile(result, filepath);
   };
+
+  require.extensions['.ts'] = loadTypeScript;
+  require.extensions['.tsx'] = loadTypeScript;
 }
 
 function convertCompilerOptions(compilerOptions, basepath) {
