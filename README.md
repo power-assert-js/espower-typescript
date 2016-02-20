@@ -33,7 +33,7 @@ You can set test directory in your `package.json`
 }
 ```
 
-Then, run mocha with `--compilers js:espower-typescript/guess`
+Then, run mocha with `--compilers ts:espower-typescript/guess`
 
 ```console
 $ mocha --compilers ts:espower-typescript/guess spec/**/*.ts
