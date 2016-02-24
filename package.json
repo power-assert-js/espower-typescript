@@ -29,7 +29,7 @@
   "dependencies": {
     "espower-source": "^1.1.0",
     "minimatch": "^3.0.0",
-    "typescript": "~1.8.0",
-    "typescript-simple": "^4.0.0"
+    "typescript": "~1.8.2",
+    "typescript-simple": "^5.0.0"
   }
 }
