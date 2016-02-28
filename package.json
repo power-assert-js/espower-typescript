@@ -4,7 +4,8 @@
   "description": "power-assert instrumentor for TypeScript",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require './guess' test/*_test.ts"
+    "test:outdir": "cd test/test-outdir && mocha --require ../../guess test/*_test.ts",
+    "test": "mocha --require './guess' test/*_test.ts && npm run test:outdir"
   },
   "repository": {
     "type": "git",
