@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "espower-source": "^1.1.0",
-    "minimatch": "^3.0.0",
+    "minimatch": "^3.0.3",
     "typescript": "^2.0.3",
     "typescript-simple": "^6.0.0"
   }
