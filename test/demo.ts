@@ -29,4 +29,11 @@ describe('Person', () => {
   it('arrow function', () => {
     assert(alice.name === (() => 1));
   });
+  // failed
+  it('TypeScript 2.0', () => {
+    function upperCase(this:string): string {
+      return this.toUpperCase();
+    }
+    assert(alice.name === upperCase.call('test'));
+  });
 });

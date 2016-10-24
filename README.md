@@ -11,6 +11,7 @@ $ npm install -D espower-typescript
 
 ## TypeScript versions
 
+* espower-typescript v6.x uses TypeScript v2.0
 * espower-typescript v5.x uses TypeScript v1.8
 * espower-typescript v4.x uses TypeScript v1.7
 * espower-typescript v2.x and v3.x uses TypeScript v1.6
