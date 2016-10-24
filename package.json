@@ -4,6 +4,7 @@
   "description": "power-assert instrumentor for TypeScript",
   "main": "index.js",
   "scripts": {
+    "demo": "mocha --require './guess' test/demo.ts",
     "test:outdir": "cd test/test-outdir && mocha --require ../../guess test/*_test.ts",
     "test": "mocha --require './guess' test/*_test.ts && npm run test:outdir"
   },
@@ -23,14 +24,14 @@
   "license": "MIT",
   "devDependencies": {
     "expect.js": "^0.3.1",
-    "mocha": "^2.4.5",
+    "mocha": "^3.1.2",
     "power-assert": "^1.2.0",
-    "react": "^0.14.7"
+    "react": "^15.3.2"
   },
   "dependencies": {
     "espower-source": "^1.1.0",
     "minimatch": "^3.0.0",
-    "typescript": "~1.8.2",
-    "typescript-simple": "^5.0.0"
+    "typescript": "^2.0.3",
+    "typescript-simple": "^6.0.0"
   }
 }
