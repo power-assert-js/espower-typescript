@@ -1,6 +1,6 @@
 'use strict';
 
-import assert = require('power-assert')
+import assert = require('assert')
 import expect = require('expect.js')
 import MyComponent from './lib/mycomponent.tsx';
 
