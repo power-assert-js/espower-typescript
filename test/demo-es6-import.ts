@@ -1,6 +1,6 @@
 import hello from './lib/hello';
 
-let assert = require('power-assert');
+let assert = require('assert');
 
 class Person {
   constructor(public name: string, public age: number) {
