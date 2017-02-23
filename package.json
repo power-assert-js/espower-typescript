@@ -1,13 +1,30 @@
 {
   "name": "espower-typescript",
-  "version": "7.0.1",
   "description": "power-assert instrumentor for TypeScript",
+  "version": "7.0.1",
+  "author": "Teppei Sato <teppeis@gmail.com>",
+  "engines": {
+    "node": ">=4"
+  },
   "main": "index.js",
   "scripts": {
     "demo": "mocha --require './guess' test/demo.ts",
-    "test:outdir": "cd test/test-outdir && mocha --require ../../guess test/*_test.ts",
-    "test": "mocha --require './guess' test/*_test.ts && npm run test:outdir"
+    "test": "mocha --require './guess' test/*_test.ts && npm run test:outdir",
+    "test:outdir": "cd test/test-outdir && mocha --require ../../guess test/*_test.ts"
   },
+  "dependencies": {
+    "espower-source": "^2.0.0",
+    "minimatch": "^3.0.3",
+    "typescript": "^2.2.1",
+    "typescript-simple": "^8.0.0"
+  },
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "mocha": "^3.1.2",
+    "power-assert": "^1.2.0",
+    "react": "^15.3.2"
+  },
+  "homepage": "https://github.com/power-assert-js/espower-typescript",
   "repository": {
     "type": "git",
     "url": "https://github.com/power-assert-js/espower-typescript"
@@ -15,23 +32,9 @@
   "bugs": {
     "url": "https://github.com/power-assert-js/espower-typescript/issues"
   },
-  "homepage": "https://github.com/power-assert-js/espower-typescript",
   "keywords": [
     "power-assert",
     "typescript"
   ],
-  "author": "Teppei Sato <teppeis@gmail.com>",
-  "license": "MIT",
-  "devDependencies": {
-    "expect.js": "^0.3.1",
-    "mocha": "^3.1.2",
-    "power-assert": "^1.2.0",
-    "react": "^15.3.2"
-  },
-  "dependencies": {
-    "espower-source": "^2.0.0",
-    "minimatch": "^3.0.3",
-    "typescript": "^2.2.1",
-    "typescript-simple": "^8.0.0"
-  }
+  "license": "MIT"
 }
