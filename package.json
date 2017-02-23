@@ -9,7 +9,8 @@
   "main": "index.js",
   "scripts": {
     "demo": "mocha --require './guess' test/demo.ts",
-    "test": "mocha --require './guess' test/*_test.ts && npm run test:outdir",
+    "lint": "eslint *.js",
+    "test": "npm run lint && mocha --require './guess' test/*_test.ts && npm run test:outdir",
     "test:outdir": "cd test/test-outdir && mocha --require ../../guess test/*_test.ts"
   },
   "dependencies": {
@@ -19,6 +20,8 @@
     "typescript-simple": "^8.0.0"
   },
   "devDependencies": {
+    "eslint": "^3.16.1",
+    "eslint-config-teppeis": "^5.0.0",
     "expect.js": "^0.3.1",
     "mocha": "^3.1.2",
     "power-assert": "^1.2.0",

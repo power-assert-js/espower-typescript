@@ -1,0 +1,7 @@
+{
+    "extends": "teppeis/node-es6",
+    "rules": {
+        "no-magic-numbers": 0,
+        "no-sync": 0
+    }
+}
