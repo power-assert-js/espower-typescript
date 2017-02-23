@@ -1,7 +1,13 @@
-espower-typescript [![npm version][npm-image]][npm-url] [![build status][travis-image]][travis-url] [![Dependency Status][deps-image]][deps-url]
+espower-typescript
 ====
 
 > power-assert instrumentor for TypeScript
+
+[![npm version][npm-image]][npm-url]
+![Node.js Version Support][node-version]
+[![build status][travis-image]][travis-url]
+[![Dependency Status][deps-image]][deps-url]
+![License][license]
 
 ## Install
 
@@ -11,6 +17,7 @@ $ npm install -D espower-typescript
 
 ## TypeScript versions
 
+* espower-typescript v8.x uses TypeScript v2.2
 * espower-typescript v7.x uses TypeScript v2.1
 * espower-typescript v6.x uses TypeScript v2.0
 * espower-typescript v5.x uses TypeScript v1.8
@@ -72,3 +79,5 @@ Note: only `compilerOptions` field in tsconfig.json is applied.
 [travis-url]: https://travis-ci.org/power-assert-js/espower-typescript
 [deps-image]: https://david-dm.org/power-assert-js/espower-typescript.svg
 [deps-url]: https://david-dm.org/power-assert-js/espower-typescript
+[node-version]: https://img.shields.io/badge/Node.js%20support-v4,v6,v7-brightgreen.svg
+[license]: https://img.shields.io/npm/l/espower-typescript.svg
