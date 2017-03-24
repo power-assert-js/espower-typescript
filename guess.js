@@ -39,5 +39,6 @@ function parseTsConfig(tsconfigPath) {
     return null;
   }
 
+  delete parsed.config.compilerOptions.outDir;
   return parsed.config.compilerOptions;
 }
