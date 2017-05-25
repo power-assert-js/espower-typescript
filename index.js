@@ -14,6 +14,7 @@ function espowerTypeScript(options) {
   var pattern = cwd + separator + options.pattern;
   var compilerOptions = convertCompilerOptions(options.compilerOptions, options.basepath || cwd);
   var tss = new TypeScriptSimple(compilerOptions, false);
+  var allowJs = (compilerOptions && compilerOptions.allowJs);
 
   function loadTypeScript(localModule, filepath) {
     var result = tss.compile(fs.readFileSync(filepath, 'utf-8'), path.relative(cwd, filepath));
@@ -25,6 +26,9 @@ function espowerTypeScript(options) {
 
   require.extensions['.ts'] = loadTypeScript;
   require.extensions['.tsx'] = loadTypeScript;
+  if (allowJs) {
+    require.extensions['.js'] = loadTypeScript;
+  }
 }
 
 function convertCompilerOptions(compilerOptions, basepath) {
