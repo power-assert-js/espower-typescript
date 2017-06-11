@@ -79,5 +79,5 @@ Note: only `compilerOptions` field in tsconfig.json is applied.
 [travis-url]: https://travis-ci.org/power-assert-js/espower-typescript
 [deps-image]: https://david-dm.org/power-assert-js/espower-typescript.svg
 [deps-url]: https://david-dm.org/power-assert-js/espower-typescript
-[node-version]: https://img.shields.io/badge/Node.js%20support-v4,v6,v7-brightgreen.svg
+[node-version]: https://img.shields.io/badge/Node.js%20support-v4,v6,v8-brightgreen.svg
 [license]: https://img.shields.io/npm/l/espower-typescript.svg
