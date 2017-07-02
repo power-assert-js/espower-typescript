@@ -4,6 +4,13 @@ node_js:
   - "6"
   - "8"
 sudo: false
+script:
+  - npm install --no-save typescript@2.2
+  - npm test
+  - npm install --no-save typescript@2.3
+  - npm test
+  - npm install --no-save typescript@2.4
+  - npm test
 cache:
   directories:
     - node_modules

@@ -16,13 +16,13 @@
     "espower-source": "^2.0.0",
     "minimatch": "^3.0.3",
     "typescript": "^2.2.1",
-    "typescript-simple": "^8.0.0"
+    "typescript-simple": "^8.0.2"
   },
   "devDependencies": {
     "expect.js": "^0.3.1",
     "mocha": "^3.1.2",
     "power-assert": "^1.2.0",
-    "react": "^15.3.2"
+    "react": "^15.6.1"
   },
   "homepage": "https://github.com/power-assert-js/espower-typescript",
   "repository": {
