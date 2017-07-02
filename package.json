@@ -9,7 +9,8 @@
   "main": "index.js",
   "scripts": {
     "demo": "mocha --require './guess' test/demo.ts",
-    "test": "mocha --require './guess' test/*_test.ts && npm run test:outdir",
+    "test": "mocha --require './guess' test/*_test.ts && npm run test:outdir && npm run test:allowJs",
+    "test:allowJs": "cd test/test-allow-js && mocha --require ../../guess test/*_test.js",
     "test:outdir": "cd test/test-outdir && mocha --require ../../guess test/*_test.ts"
   },
   "dependencies": {
