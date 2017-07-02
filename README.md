@@ -9,12 +9,6 @@ espower-typescript
 [![Dependency Status][deps-image]][deps-url]
 ![License][license]
 
-## Install
-
-```console
-$ npm install -D espower-typescript
-```
-
 ## TypeScript versions
 
 * espower-typescript v8.x uses TypeScript v2.2, v2.3 and v2.4
@@ -27,13 +21,30 @@ $ npm install -D espower-typescript
 
 ## Usage
 
-### Zero-config mode
+### Install
 
 ```console
-$ mocha --compilers ts:espower-typescript/guess test/**/*.ts
+$ npm install -D espower-typescript power-assert mocha
 ```
 
-### If your tests are not in test dir
+### Zero-config mode
+
+```typescript
+// test/test.ts
+import assert = require('assert');
+
+describe('Array#join', () => {
+  it('joins all elements into a string with separator', () => {
+    assert(['a', 'b', 'c'].join(':') === 'a:b:c');
+  });
+});
+```
+
+```console
+$ ./node_modules/.bin/mocha --compilers ts:espower-typescript/guess test/**/*.ts
+```
+
+### If your tests are not in `test` directory
 
 You can set test directory in your `package.json`
 
@@ -52,7 +63,7 @@ You can set test directory in your `package.json`
 Then, run mocha with `--compilers ts:espower-typescript/guess`
 
 ```console
-$ mocha --compilers ts:espower-typescript/guess spec/**/*.ts
+$ ./node_modules/.bin/mocha --compilers ts:espower-typescript/guess spec/**/*.ts
 ```
 
 Note: `'espower-typescript/guess'` is inspired by [intelli-espower-loader](https://github.com/azu/intelli-espower-loader)
