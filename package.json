@@ -7,12 +7,15 @@
     "node": ">=4"
   },
   "main": "index.js",
+  "files": [
+    "*.js"
+  ],
   "scripts": {
     "demo": "mocha --require './guess' test/demo.ts",
     "test": "run-s test:*",
+    "test:outdir": "cd test/test-outdir && mocha --require ../../guess test/*_test.ts",
     "test:ts": "mocha --require './guess' test/*_test.ts",
-    "test:tsx": "mocha --require './guess' test/*_test.tsx",
-    "test:outdir": "cd test/test-outdir && mocha --require ../../guess test/*_test.ts"
+    "test:tsx": "mocha --require './guess' test/*_test.tsx"
   },
   "dependencies": {
     "espower-source": "^2.0.0",
