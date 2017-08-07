@@ -3,7 +3,7 @@ var path = require('path');
 
 var ts = require('typescript');
 
-var pattern = 'test/**/*.ts';
+var pattern = 'test/**/*.@(ts|tsx)';
 var cwd = process.cwd();
 var packageData = require(path.join(cwd, 'package.json'));
 
@@ -11,7 +11,7 @@ if (packageData &&
     typeof packageData.directories === 'object' &&
     typeof packageData.directories.test === 'string') {
   var testDir = packageData.directories.test;
-  pattern = testDir + ((testDir.lastIndexOf('/', 0) === 0) ? '' : '/') + '**/*.ts';
+  pattern = testDir + ((testDir.lastIndexOf('/', 0) === 0) ? '' : '/') + '**/*.@(ts|tsx)';
 }
 
 var tsconfigPath = ts.findConfigFile(cwd, fs.existsSync);

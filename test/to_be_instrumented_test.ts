@@ -1,22 +1,10 @@
 'use strict';
 
-import assert = require('assert')
-import expect = require('expect.js')
+import assert = require('assert');
+import expectPowerAssertMessage from './lib/expectPowerAssertMessage';
 import MyComponent from './lib/mycomponent.tsx';
 
-describe('power-assert message', function() {
-
-  beforeEach(function() {
-    this.expectPowerAssertMessage = (body: () => void, expectedLines: string) => {
-      try {
-        body();
-        expect().fail('AssertionError should be thrown');
-      } catch(e) {
-        expect(e.message.split('\n').slice(2, -1).join('\n')).to.eql(expectedLines);
-      }
-    }
-  });
-
+describe('espower-typescript: ts', function() {
   it('Nested CallExpression with BinaryExpression: assert((three * (seven * ten)) === three)', function() {
     let one: number = 1;
     let two: number = 2;
@@ -35,7 +23,7 @@ describe('power-assert message', function() {
   => 3
   [number] three * (seven * ten)
   => 210`;
-    this.expectPowerAssertMessage(() => {
+    expectPowerAssertMessage(() => {
       assert(three * (seven * ten) === three);
     }, expected);
   });
@@ -46,7 +34,7 @@ describe('power-assert message', function() {
 `  assert.equal(1, minusOne)
                   |        
                   -1       `;
-    this.expectPowerAssertMessage(() => {
+    expectPowerAssertMessage(() => {
       assert.equal(1, minusOne);
     }, expected);
   });
@@ -57,7 +45,7 @@ describe('power-assert message', function() {
                   |                 |         
                   |                 Object{"$$typeof":Symbol(react.element),type:"input",key:null,ref:null,props:#Object#,_owner:null,_store:#Object#}
                   Object{default:#function#}  `;
-    this.expectPowerAssertMessage(() => {
+    expectPowerAssertMessage(() => {
       assert.equal(1, MyComponent());
     }, expected);
   });
