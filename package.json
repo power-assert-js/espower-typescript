@@ -9,8 +9,9 @@
   "main": "index.js",
   "scripts": {
     "demo": "mocha --require './guess' test/demo.ts",
-    "test": "run-p test:*",
+    "test": "run-s test:*",
     "test:ts": "mocha --require './guess' test/*_test.ts",
+    "test:tsx": "mocha --require './guess' test/*_test.tsx",
     "test:outdir": "cd test/test-outdir && mocha --require ../../guess test/*_test.ts"
   },
   "dependencies": {

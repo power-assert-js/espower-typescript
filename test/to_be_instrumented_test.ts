@@ -4,7 +4,7 @@ import assert = require('assert')
 import expect = require('expect.js')
 import MyComponent from './lib/mycomponent.tsx';
 
-describe('power-assert message', function() {
+describe('espower-typescript: ts', function() {
 
   beforeEach(function() {
     this.expectPowerAssertMessage = (body: () => void, expectedLines: string) => {

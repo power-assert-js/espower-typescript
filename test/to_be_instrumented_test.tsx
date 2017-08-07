@@ -2,9 +2,10 @@
 
 import assert = require('assert')
 import expect = require('expect.js')
-import MyComponent from '../lib/mycomponent.tsx';
+import React = require('react');
 
-describe('espower-typescript: `outDir` option', function() {
+describe('espower-typescript: tsx', function() {
+
   beforeEach(function() {
     this.expectPowerAssertMessage = (body: () => void, expectedLines: string) => {
       try {
@@ -16,14 +17,17 @@ describe('espower-typescript: `outDir` option', function() {
     }
   });
 
-  it('equal with Literal and Identifier: assert.equal(1, minusOne)', function() {
-    let minusOne: number = -1;
-    let expected: string =
-`  assert.equal(1, minusOne)
-                  |        
-                  -1       `;
+  it('jsx:react', function() {
+    let Foo = (): any => {
+        return (<input />);
+    };
+
+    let expected =
+`  assert.equal(1, Foo())
+                  |     
+                  Object{"$$typeof":Symbol(react.element),type:"input",key:null,ref:null,props:#Object#,_owner:null,_store:#Object#}`;
     this.expectPowerAssertMessage(() => {
-      assert.equal(1, minusOne);
+      assert.equal(1, Foo());
     }, expected);
   });
 });
