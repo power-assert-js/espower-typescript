@@ -11,6 +11,8 @@ script:
   - npm test
   - npm install --no-save typescript@2.4
   - npm test
+  - npm install --no-save typescript
+  - npm test
 cache:
   directories:
     - node_modules

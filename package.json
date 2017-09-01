@@ -1,7 +1,7 @@
 {
   "name": "espower-typescript",
   "description": "power-assert instrumentor for TypeScript",
-  "version": "8.1.0",
+  "version": "8.1.1-rc.0",
   "author": "Teppei Sato <teppeis@gmail.com>",
   "engines": {
     "node": ">=4"
@@ -20,13 +20,13 @@
   "dependencies": {
     "espower-source": "^2.0.0",
     "minimatch": "^3.0.3",
-    "typescript": "^2.4.2",
-    "typescript-simple": "^8.0.3"
+    "typescript": "^2.5.2",
+    "typescript-simple": "^8.0.4"
   },
   "devDependencies": {
     "expect.js": "^0.3.1",
-    "mocha": "^3.1.2",
-    "npm-run-all": "^4.0.2",
+    "mocha": "^3.5.0",
+    "npm-run-all": "^4.1.1",
     "power-assert": "^1.2.0",
     "react": "^15.6.1"
   },
