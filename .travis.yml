@@ -11,7 +11,9 @@ script:
   - npm test
   - npm install --no-save typescript@2.4
   - npm test
-  - npm install --no-save typescript
+  - npm install --no-save typescript@2.5
+  - npm test
+  - npm install --no-save typescript@rc
   - npm test
 cache:
   directories:
