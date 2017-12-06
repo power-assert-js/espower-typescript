@@ -41,7 +41,12 @@ describe('Array#join', () => {
 ```
 
 ```console
-$ ./node_modules/.bin/mocha --compilers ts:espower-typescript/guess test/**/*.ts
+// for mocha version >= 4
+$ ./node_modules/.bin/mocha --require espower-typescript/guess "test/**/*.ts"
+
+
+// for mocha version < 4 (deprecated)
+$ ./node_modules/.bin/mocha --compilers ts:espower-typescript/guess "test/**/*.ts"
 ```
 
 ### If your tests are not in `test` directory
@@ -60,10 +65,14 @@ You can set test directory in your `package.json`
 }
 ```
 
-Then, run mocha with `--compilers ts:espower-typescript/guess`
+Then, run mocha with `--require espower-typescript/guess`
 
 ```console
-$ ./node_modules/.bin/mocha --compilers ts:espower-typescript/guess spec/**/*.ts
+// for mocha version >= 4
+$ ./node_modules/.bin/mocha --require espower-typescript/guess "spec/**/*.ts"
+
+// for mocha version < 4 (deprecated)
+$ ./node_modules/.bin/mocha --compilers ts:espower-typescript/guess "spec/**/*.ts"
 ```
 
 Note: `'espower-typescript/guess'` is inspired by [intelli-espower-loader](https://github.com/azu/intelli-espower-loader)
