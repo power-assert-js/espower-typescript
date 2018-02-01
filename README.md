@@ -11,7 +11,7 @@ espower-typescript
 
 ## TypeScript versions
 
-* espower-typescript v8.x uses TypeScript from v2.2 to v2.6
+* espower-typescript v8.x uses TypeScript from v2.2 to v2.7
 * espower-typescript v7.x uses TypeScript v2.1
 * espower-typescript v6.x uses TypeScript v2.0
 * espower-typescript v5.x uses TypeScript v1.8

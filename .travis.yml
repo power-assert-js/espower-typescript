@@ -13,6 +13,8 @@ script:
   - npm test
   - npm install --no-save typescript@2.5
   - npm test
+  - npm install --no-save typescript@2.6
+  - npm test
   - npm install --no-save typescript@latest
   - npm test
 cache:
