@@ -20,7 +20,7 @@
   "dependencies": {
     "espower-source": "^2.0.0",
     "minimatch": "^3.0.3",
-    "typescript": "^2.7.1",
+    "typescript": "^2.2.1",
     "typescript-simple": "^8.0.5"
   },
   "devDependencies": {
