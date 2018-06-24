@@ -1,25 +1,30 @@
 'use strict';
 
-import assert = require('assert')
-import expect = require('expect.js')
-import MyComponent from '../lib/mycomponent.tsx';
+const assert = require('assert');
 
-describe('test for allowJs option', function() {
+describe('test for allowJs option', () => {
   beforeEach(function() {
-    this.expectPowerAssertMessage = (body: () => void, expectedLines: string) => {
+    // don't use `assert` not to instrument
+    const ass = assert;
+    this.expectPowerAssertMessage = (body, expectedLines) => {
       try {
         body();
-        expect().fail('AssertionError should be thrown');
-      } catch(e) {
-        expect(e.message.split('\n').slice(2, -1).join('\n')).to.eql(expectedLines);
+        ass.fail('AssertionError should be thrown');
+      } catch (e) {
+        ass.equal(
+          e.message
+            .split('\n')
+            .slice(2, -1)
+            .join('\n'),
+          expectedLines
+        );
       }
-    }
+    };
   });
 
   it('equal with Literal and Identifier: assert.equal(1, minusOne)', function() {
-    let minusOne: number = -1;
-    let expected: string =
-`  assert.equal(1, minusOne)
+    const minusOne = -1;
+    const expected = `  assert.equal(1, minusOne)
                   |        
                   -1       `;
     this.expectPowerAssertMessage(() => {
