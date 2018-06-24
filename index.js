@@ -2,20 +2,22 @@
 
 'use strict';
 
+const path = require('path');
 const espowerSource = require('espower-source');
 const minimatch = require('minimatch');
 const tsNodeRegister = require('ts-node').register;
 
-function espowerTypeScript(options) {
-  tsNodeRegister(options.tsNode);
-  espowerTsRegister('.ts', options);
-  espowerTsRegister('.tsx', options);
+function espowerTypeScript(options, tsNodeOptions) {
+  tsNodeRegister(tsNodeOptions);
+  const {extensions = ['ts', 'tsx']} = options;
+  extensions.forEach(ext => {
+    espowerTsRegister(`.${ext}`, options);
+  });
 }
 
 function espowerTsRegister(ext, options) {
   const cwd = options.cwd || process.cwd();
-  const separator = options.pattern.lastIndexOf('/', 0) === 0 ? '' : '/';
-  const pattern = cwd + separator + options.pattern;
+  const pattern = path.join(cwd, options.pattern);
 
   const originalExtension = require.extensions[ext];
   require.extensions[ext] = (module, filepath) => {
