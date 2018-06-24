@@ -1,5 +1,4 @@
-espower-typescript
-====
+# espower-typescript
 
 > power-assert instrumentor for TypeScript
 
@@ -11,13 +10,13 @@ espower-typescript
 
 ## TypeScript versions
 
-* espower-typescript v8.x uses TypeScript from v2.2 to v2.9
-* espower-typescript v7.x uses TypeScript v2.1
-* espower-typescript v6.x uses TypeScript v2.0
-* espower-typescript v5.x uses TypeScript v1.8
-* espower-typescript v4.x uses TypeScript v1.7
-* espower-typescript v2.x and v3.x uses TypeScript v1.6
-* espower-typescript v1.x uses TypeScript v1.5
+- espower-typescript v8.x uses TypeScript from v2.2 to v2.9
+- espower-typescript v7.x uses TypeScript v2.1
+- espower-typescript v6.x uses TypeScript v2.0
+- espower-typescript v5.x uses TypeScript v1.8
+- espower-typescript v4.x uses TypeScript v1.7
+- espower-typescript v2.x and v3.x uses TypeScript v1.6
+- espower-typescript v1.x uses TypeScript v1.5
 
 ## Usage
 
@@ -89,9 +88,9 @@ Note: only `compilerOptions` field in tsconfig.json is applied.
 
 ## License
 
-* MIT License: Teppei Sato &lt;teppeis@gmail.com&gt;
-* Includes [yosuke-furukawa/espower-traceur](https://github.com/yosuke-furukawa/espower-traceur)
-* Includes [azu/espower-babel](https://github.com/azu/espower-babel)
+- MIT License: Teppei Sato &lt;teppeis@gmail.com&gt;
+- Includes [yosuke-furukawa/espower-traceur](https://github.com/yosuke-furukawa/espower-traceur)
+- Includes [azu/espower-babel](https://github.com/azu/espower-babel)
 
 [npm-image]: https://img.shields.io/npm/v/espower-typescript.svg
 [npm-url]: https://npmjs.org/package/espower-typescript
@@ -99,5 +98,5 @@ Note: only `compilerOptions` field in tsconfig.json is applied.
 [travis-url]: https://travis-ci.org/power-assert-js/espower-typescript
 [deps-image]: https://david-dm.org/power-assert-js/espower-typescript.svg
 [deps-url]: https://david-dm.org/power-assert-js/espower-typescript
-[node-version]: https://img.shields.io/badge/Node.js%20support-v4,v6,v8-brightgreen.svg
+[node-version]: https://img.shields.io/badge/Node.js%20support-v4,v6,v8,v10-brightgreen.svg
 [license]: https://img.shields.io/npm/l/espower-typescript.svg
