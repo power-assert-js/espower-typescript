@@ -13,7 +13,7 @@
   "scripts": {
     "demo": "mocha --require './guess' test/demo.ts",
     "lint": "eslint *.js",
-    "test": "run-s test:*",
+    "test": "run-s lint test:*",
     "test:outdir": "cd test/test-outdir && mocha --require ../../guess test/*_test.ts",
     "test:ts": "mocha --require './guess' test/*_test.ts",
     "test:tsx": "mocha --require './guess' test/*_test.tsx"
