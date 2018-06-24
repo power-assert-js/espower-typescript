@@ -3,6 +3,9 @@
   "description": "power-assert instrumentor for TypeScript",
   "version": "8.1.3",
   "author": "Teppei Sato <teppeis@gmail.com>",
+  "publishConfig": {
+    "tag": "next"
+  },
   "engines": {
     "node": ">=6"
   },
@@ -18,9 +21,6 @@
     "test:outdir": "cd test/test-outdir && mocha --require ../../guess test/*_test.ts",
     "test:ts": "mocha --require './guess' test/*_test.ts",
     "test:tsx": "mocha --require './guess' test/*_test.tsx"
-  },
-  "peerDependencies": {
-    "typescript": ">= 2.4.2"
   },
   "dependencies": {
     "espower-source": "^2.3.0",
@@ -39,6 +39,9 @@
     "prettier": "1.13.5",
     "react": "^16.4.1",
     "typescript": "^2.9.2"
+  },
+  "peerDependencies": {
+    "typescript": ">= 2.4.2"
   },
   "homepage": "https://github.com/power-assert-js/espower-typescript",
   "repository": {
