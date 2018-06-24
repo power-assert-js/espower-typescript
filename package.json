@@ -22,7 +22,7 @@
     "espower-source": "^2.3.0",
     "minimatch": "^3.0.3",
     "ts-node": "^7.0.0",
-    "typescript": "^2.9.2"
+    "typescript": "^2.4.2"
   },
   "devDependencies": {
     "@types/mocha": "^5.2.3",
