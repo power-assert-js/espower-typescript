@@ -1,11 +1,10 @@
+/* eslint node/no-deprecated-api: [error, {ignoreGlobalItems: ["require.extensions"]}] */
+
 'use strict';
 
-var fs = require('fs');
-var path = require('path');
-
-var espowerSource = require('espower-source');
-var minimatch = require('minimatch');
-var tsNodeRegister = require('ts-node').register;
+const espowerSource = require('espower-source');
+const minimatch = require('minimatch');
+const tsNodeRegister = require('ts-node').register;
 
 function espowerTypeScript(options) {
   tsNodeRegister(options.tsNode);
@@ -15,7 +14,7 @@ function espowerTypeScript(options) {
 
 function espowerTsRegister(ext, options) {
   const cwd = options.cwd || process.cwd();
-  const separator = (options.pattern.lastIndexOf('/', 0) === 0) ? '' : '/';
+  const separator = options.pattern.lastIndexOf('/', 0) === 0 ? '' : '/';
   const pattern = cwd + separator + options.pattern;
 
   const originalExtension = require.extensions[ext];
@@ -25,8 +24,8 @@ function espowerTsRegister(ext, options) {
     }
     const originalCompile = module._compile;
     module._compile = function(code, filepath) {
-      return originalCompile.call(this, espowerSource(code, filepath, options), filepath)
-    }
+      return originalCompile.call(this, espowerSource(code, filepath, options), filepath);
+    };
     return originalExtension(module, filepath);
   };
 }

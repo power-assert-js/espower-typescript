@@ -1,15 +1,18 @@
-var fs = require('fs');
-var path = require('path');
+'use strict';
 
-var pattern = 'test/**/*.@(ts|tsx)';
-var cwd = process.cwd();
-var packageData = require(path.join(cwd, 'package.json'));
+const path = require('path');
 
-if (packageData &&
-    typeof packageData.directories === 'object' &&
-    typeof packageData.directories.test === 'string') {
-  var testDir = packageData.directories.test;
-  pattern = testDir + ((testDir.lastIndexOf('/', 0) === 0) ? '' : '/') + '**/*.@(ts|tsx)';
+let pattern = 'test/**/*.@(ts|tsx)';
+const cwd = process.cwd();
+const packageData = require(path.join(cwd, 'package.json'));
+
+if (
+  packageData &&
+  typeof packageData.directories === 'object' &&
+  typeof packageData.directories.test === 'string'
+) {
+  const testDir = packageData.directories.test;
+  pattern = `${testDir + (testDir.lastIndexOf('/', 0) === 0 ? '' : '/')}**/*.@(ts|tsx)`;
 }
 
 require('./index')({
