@@ -18,7 +18,7 @@
     "test:tsx": "mocha --require './guess' test/*_test.tsx"
   },
   "dependencies": {
-    "espower-source": "^2.0.0",
+    "espower-source": "^2.3.0",
     "minimatch": "^3.0.3",
     "typescript": "^2.2.1",
     "typescript-simple": "^8.0.6"
