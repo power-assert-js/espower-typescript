@@ -3,9 +3,6 @@
   "description": "power-assert instrumentor for TypeScript",
   "version": "9.0.0-beta.0",
   "author": "Teppei Sato <teppeis@gmail.com>",
-  "publishConfig": {
-    "tag": "next"
-  },
   "engines": {
     "node": ">=6"
   },
