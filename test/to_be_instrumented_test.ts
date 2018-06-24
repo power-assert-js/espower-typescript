@@ -2,7 +2,7 @@
 
 import assert = require('assert');
 import expectPowerAssertMessage from './lib/expectPowerAssertMessage';
-import MyComponent from './lib/mycomponent.tsx';
+import MyComponent from './lib/mycomponent';
 
 describe('espower-typescript: ts', function() {
   it('Nested CallExpression with BinaryExpression: assert((three * (seven * ten)) === three)', function() {
@@ -41,10 +41,10 @@ describe('espower-typescript: ts', function() {
 
   it('jsx:react', function() {
     let expected =
-`  assert.equal(1, mycomponent_tsx_1.default())
-                  |                 |         
-                  |                 Object{"$$typeof":Symbol(react.element),type:"input",key:null,ref:null,props:#Object#,_owner:null,_store:#Object#}
-                  Object{default:#function#}  `;
+`  assert.equal(1, mycomponent_1.default())
+                  |             |         
+                  |             Object{"$$typeof":Symbol(react.element),type:"input",key:null,ref:null,props:#Object#,_owner:null,_store:#Object#}
+                  Object{default:#function#}`;
     expectPowerAssertMessage(() => {
       assert.equal(1, MyComponent());
     }, expected);
