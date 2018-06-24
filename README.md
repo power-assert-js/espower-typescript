@@ -14,7 +14,7 @@ espower-typescript v9.x is compatible with TypeScript v2.4+
 
 ## Usage (zero-config mode)
 
-NOTE: If you use older version than v9, see [older document](https://github.com/power-assert-js/espower-typescript/blob/v8.1.3/README.md).
+NOTE: If you use older version than v9, see [older document](https://github.com/power-assert-js/espower-typescript/blob/v8.1.4/README.md).
 
 Install
 
