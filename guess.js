@@ -1,43 +1,42 @@
-var fs = require('fs');
-var path = require('path');
+'use strict';
 
-var ts = require('typescript');
+const path = require('path');
+const ts = require('typescript');
 
-var pattern = 'test/**/*.@(ts|tsx)';
-var cwd = process.cwd();
-var packageData = require(path.join(cwd, 'package.json'));
-
-if (packageData &&
-    typeof packageData.directories === 'object' &&
-    typeof packageData.directories.test === 'string') {
-  var testDir = packageData.directories.test;
-  pattern = testDir + ((testDir.lastIndexOf('/', 0) === 0) ? '' : '/') + '**/*.@(ts|tsx)';
+const cwd = process.cwd();
+const compilerOptions = loadCompilerOptions(cwd) || {};
+const extensions = ['ts', 'tsx'];
+if (compilerOptions.allowJs) {
+  extensions.push('js');
+  extensions.push('jsx');
 }
 
-var tsconfigPath = ts.findConfigFile(cwd, fs.existsSync);
-var tsconfigBasepath = null;
-var compilerOptions = null;
-if (tsconfigPath) {
-  compilerOptions = parseTsConfig(tsconfigPath);
-  tsconfigBasepath = path.dirname(tsconfigPath);
+let testDir = 'test';
+const packageData = require(path.join(cwd, 'package.json'));
+if (
+  packageData &&
+  typeof packageData.directories === 'object' &&
+  typeof packageData.directories.test === 'string'
+) {
+  testDir = packageData.directories.test;
 }
+const pattern = path.join(testDir, `**/*.@(${extensions.join('|')})`);
 
-require('./index')({
-    cwd: cwd,
-    pattern: pattern,
-    compilerOptions: compilerOptions,
-    basepath: tsconfigBasepath
-});
+require('./index')({cwd, pattern, extensions});
 
-function parseTsConfig(tsconfigPath) {
-  var parsed = ts.parseConfigFileTextToJson(tsconfigPath, fs.readFileSync(tsconfigPath, 'utf8'));
-  if (parsed.error) {
-    throw new Error(parsed.error.messageText);
-  }
-
-  if (!parsed.config || !parsed.config.compilerOptions) {
+function loadCompilerOptions(cwd) {
+  const tsconfigPath = ts.findConfigFile(cwd, ts.sys.fileExists);
+  if (!tsconfigPath) {
     return null;
   }
-
-  return parsed.config.compilerOptions;
+  const result = ts.readConfigFile(tsconfigPath, ts.sys.readFile);
+  if (result.error) {
+    throw new Error(result.error.messageText);
+  }
+  if (result.config && result.config.compilerOptions) {
+    const basepath = path.dirname(tsconfigPath);
+    const {options} = ts.parseJsonConfigFileContent(result.config, ts.sys, basepath);
+    return options;
+  }
+  return null;
 }

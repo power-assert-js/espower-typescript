@@ -5,22 +5,12 @@ node_js:
   - "10"
 sudo: false
 script:
-  - npm install --no-save typescript@2.2
+  - npm install -D typescript@2.4
   - npm test
-  - npm install --no-save typescript@2.3
+  - npm install -D typescript@2.8
   - npm test
-  - npm install --no-save typescript@2.4
-  - npm test
-  - npm install --no-save typescript@2.5
-  - npm test
-  - npm install --no-save typescript@2.6
-  - npm test
-  - npm install --no-save typescript@2.7
-  - npm test
-  - npm install --no-save typescript@2.8
-  - npm test
-  - npm install --no-save typescript@latest
+  - npm install -D typescript@2.9
   - npm test
 cache:
   directories:
-    - node_modules
+    - $HOME/.npm
