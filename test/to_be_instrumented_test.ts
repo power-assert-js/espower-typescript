@@ -2,6 +2,7 @@
 
 import assert = require('assert');
 import expectPowerAssertMessage from './lib/expectPowerAssertMessage';
+import expectErrorStacksCorrect from './lib/expectErrorStacksCorrect';
 import MyComponent from './lib/mycomponent';
 
 describe('espower-typescript: ts', function() {
@@ -37,6 +38,10 @@ describe('espower-typescript: ts', function() {
     expectPowerAssertMessage(() => {
       assert.equal(1, minusOne);
     }, expected);
+  });
+
+  it('error stack line number and column number should correct', function() {
+    expectErrorStacksCorrect(5, 12);
   });
 
   it('jsx:react', function() {
