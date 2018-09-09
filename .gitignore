@@ -1,2 +1,4 @@
 /node_modules
 test/test-outdir/**/*.js
+yarn.lock
+*.log

@@ -5,10 +5,19 @@
 const path = require('path');
 const espowerSource = require('espower-source');
 const minimatch = require('minimatch');
+const sourceMapSupport = require('source-map-support');
 const tsNodeRegister = require('ts-node').register;
+const sourceCache = {};
 
 function espowerTypeScript(options, tsNodeOptions) {
   tsNodeRegister(tsNodeOptions);
+
+  // install source-map-support again to correct the source-map
+  sourceMapSupport.install({
+    environment: 'node',
+    retrieveFile: path => sourceCache[path],
+  });
+
   const {extensions = ['ts', 'tsx']} = options;
   extensions.forEach(ext => {
     espowerTsRegister(`.${ext}`, options);
@@ -26,7 +35,9 @@ function espowerTsRegister(ext, options) {
     }
     const originalCompile = module._compile;
     module._compile = function(code, filepath) {
-      return originalCompile.call(this, espowerSource(code, filepath, options), filepath);
+      const newSource = espowerSource(code, filepath, options);
+      sourceCache[filepath] = newSource;
+      return originalCompile.call(this, newSource, filepath);
     };
     return originalExtension(module, filepath);
   };
