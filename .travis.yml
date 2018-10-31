@@ -6,6 +6,8 @@ node_js:
 sudo: false
 script:
   - npm test
+  - npm install -D typescript@3.0
+  - npm test
   - npm install -D typescript@2.9
   - npm test
   - npm install -D typescript@2.4
