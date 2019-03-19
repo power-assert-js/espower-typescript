@@ -3,12 +3,13 @@ node_js:
   - "6"
   - "8"
   - "10"
+  - "11"
 sudo: false
 script:
   - npm test
-  - npm install -D typescript@3.0
+  - npm install -D typescript@3.2
   - npm test
-  - npm install -D typescript@2.9
+  - npm install -D typescript@3.1
   - npm test
   - npm install -D typescript@2.4
   - npm test
