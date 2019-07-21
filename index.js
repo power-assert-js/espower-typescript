@@ -1,12 +1,12 @@
 /* eslint node/no-deprecated-api: [error, {ignoreGlobalItems: ["require.extensions"]}] */
 
-'use strict';
+"use strict";
 
-const path = require('path');
-const espowerSource = require('espower-source');
-const minimatch = require('minimatch');
-const sourceMapSupport = require('source-map-support');
-const tsNodeRegister = require('ts-node').register;
+const path = require("path");
+const espowerSource = require("espower-source");
+const minimatch = require("minimatch");
+const sourceMapSupport = require("source-map-support");
+const tsNodeRegister = require("ts-node").register;
 const sourceCache = {};
 
 function espowerTypeScript(options, tsNodeOptions) {
@@ -14,11 +14,11 @@ function espowerTypeScript(options, tsNodeOptions) {
 
   // install source-map-support again to correct the source-map
   sourceMapSupport.install({
-    environment: 'node',
+    environment: "node",
     retrieveFile: path => sourceCache[path],
   });
 
-  const {extensions = ['ts', 'tsx']} = options;
+  const { extensions = ["ts", "tsx"] } = options;
   extensions.forEach(ext => {
     espowerTsRegister(`.${ext}`, options);
   });
