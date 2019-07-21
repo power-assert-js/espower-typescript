@@ -1,3 +1,3 @@
 {
-  "extends": ["teppeis/node-v6", "teppeis/+prettier", "teppeis/+mocha"]
+  "extends": ["teppeis/node-v8", "teppeis/+prettier", "teppeis/+mocha"]
 }

@@ -1,28 +1,28 @@
-'use strict';
+"use strict";
 
-const path = require('path');
-const ts = require('typescript');
+const path = require("path");
+const ts = require("typescript");
 
 const cwd = process.cwd();
 const compilerOptions = loadCompilerOptions(cwd) || {};
-const extensions = ['ts', 'tsx'];
+const extensions = ["ts", "tsx"];
 if (compilerOptions.allowJs) {
-  extensions.push('js');
-  extensions.push('jsx');
+  extensions.push("js");
+  extensions.push("jsx");
 }
 
-let testDir = 'test';
-const packageData = require(path.join(cwd, 'package.json'));
+let testDir = "test";
+const packageData = require(path.join(cwd, "package.json"));
 if (
   packageData &&
-  typeof packageData.directories === 'object' &&
-  typeof packageData.directories.test === 'string'
+  typeof packageData.directories === "object" &&
+  typeof packageData.directories.test === "string"
 ) {
   testDir = packageData.directories.test;
 }
-const pattern = path.join(testDir, `**/*.@(${extensions.join('|')})`);
+const pattern = path.join(testDir, `**/*.@(${extensions.join("|")})`);
 
-require('./index')({cwd, pattern, extensions});
+require("./index")({ cwd, pattern, extensions });
 
 function loadCompilerOptions(cwd) {
   const tsconfigPath = ts.findConfigFile(cwd, ts.sys.fileExists);
@@ -35,7 +35,7 @@ function loadCompilerOptions(cwd) {
   }
   if (result.config && result.config.compilerOptions) {
     const basepath = path.dirname(tsconfigPath);
-    const {options} = ts.parseJsonConfigFileContent(result.config, ts.sys, basepath);
+    const { options } = ts.parseJsonConfigFileContent(result.config, ts.sys, basepath);
     return options;
   }
   return null;
