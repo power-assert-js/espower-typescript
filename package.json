@@ -22,8 +22,8 @@
   "dependencies": {
     "espower-source": "^2.3.0",
     "minimatch": "^3.0.3",
-    "source-map-support": "^0.5.9",
-    "ts-node": "^8.0.3"
+    "source-map-support": "^0.5.12",
+    "ts-node": "^8.3.0"
   },
   "devDependencies": {
     "@types/mocha": "^5.2.5",
@@ -36,7 +36,7 @@
     "power-assert": "^1.6.1",
     "prettier": "^1.16.4",
     "react": "^16.5.0",
-    "typescript": "^3.1.4"
+    "typescript": "^3.5.3"
   },
   "peerDependencies": {
     "typescript": ">= 2.4.2"
