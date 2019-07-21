@@ -118,5 +118,5 @@ If `allowJs: true` in your `tsconfig.json`, assertions in `test/**/*.(js|jsx)` a
 [travis-url]: https://travis-ci.org/power-assert-js/espower-typescript
 [deps-image]: https://david-dm.org/power-assert-js/espower-typescript.svg
 [deps-url]: https://david-dm.org/power-assert-js/espower-typescript
-[node-version]: https://img.shields.io/badge/Node.js%20support-v6,v8,v10,v12-brightgreen.svg
+[node-version]: https://img.shields.io/badge/Node.js%20support-v8,v10,v12-brightgreen.svg
 [license]: https://img.shields.io/npm/l/espower-typescript.svg
