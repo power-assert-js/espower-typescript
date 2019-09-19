@@ -56,7 +56,7 @@ Output
 
 ### CAUTION: don't use `import 'assert' from 'assert'`
 
-Just use old style `import 'assert' = require('assert')` for assert module.
+Just use old style `const assert = require('assert')` for assert module.
 This is limitation.
 
 ## Configure
