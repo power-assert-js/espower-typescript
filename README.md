@@ -54,9 +54,9 @@ Output
          ["a","b","c"] "a:b:c"   false
 ```
 
-### CAUTION: don't use `import 'assert' from 'assert'`
+### CAUTION: don't use `import assert from 'assert'`
 
-Just use old style `import 'assert' = require('assert')` for assert module.
+Just use old style `import assert = require('assert')` for assert module.
 This is limitation.
 
 ## Configure
