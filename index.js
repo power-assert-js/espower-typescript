@@ -30,7 +30,7 @@ function espowerTsRegister(ext, options) {
 
   const originalExtension = require.extensions[ext];
   require.extensions[ext] = (module, filepath) => {
-    if (!minimatch(filepath, pattern)) {
+    if (!minimatch(filepath, pattern) || ext === '.js') {
       return originalExtension(module, filepath);
     }
     const originalCompile = module._compile;
