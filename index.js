@@ -15,11 +15,11 @@ function espowerTypeScript(options, tsNodeOptions) {
   // install source-map-support again to correct the source-map
   sourceMapSupport.install({
     environment: "node",
-    retrieveFile: path => sourceCache[path],
+    retrieveFile: (path) => sourceCache[path],
   });
 
   const { extensions = ["ts", "tsx"] } = options;
-  extensions.forEach(ext => {
+  extensions.forEach((ext) => {
     espowerTsRegister(`.${ext}`, options);
   });
 }
@@ -34,7 +34,7 @@ function espowerTsRegister(ext, options) {
       return originalExtension(module, filepath);
     }
     const originalCompile = module._compile;
-    module._compile = function(code, filepath) {
+    module._compile = function (code, filepath) {
       const newSource = espowerSource(code, filepath, options);
       sourceCache[filepath] = newSource;
       return originalCompile.call(this, newSource, filepath);
