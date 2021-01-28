@@ -4,8 +4,10 @@
 
 [![npm version][npm-image]][npm-url]
 ![Node.js Version Support][node-version]
+![TypeScript Version Support][ts-version]
 [![build status][ci-image]][ci-url]
 [![Dependency Status][deps-image]][deps-url]
+![monthly downloads][npm-downloads-image]
 ![License][license]
 
 ## TypeScript versions
@@ -110,11 +112,13 @@ If `allowJs: true` in your `tsconfig.json`, assertions in `test/**/*.(js|jsx)` a
 - Includes [yosuke-furukawa/espower-traceur](https://github.com/yosuke-furukawa/espower-traceur)
 - Includes [azu/espower-babel](https://github.com/azu/espower-babel)
 
-[npm-image]: https://img.shields.io/npm/v/espower-typescript.svg
+[npm-image]: https://badgen.net/npm/v/espower-typescript?icon=npm&label=
 [npm-url]: https://npmjs.org/package/espower-typescript
+[npm-downloads-image]: https://badgen.net/npm/dm/espower-typescript
 [ci-image]: https://github.com/power-assert-js/espower-typescript/workflows/Node.js%20CI/badge.svg
 [ci-url]: https://github.com/power-assert-js/espower-typescript/actions?query=workflow%3A%22Node.js+CI%22
-[deps-image]: https://david-dm.org/power-assert-js/espower-typescript.svg
+[deps-image]: https://badgen.net/david/dep/power-assert-js/espower-typescript
 [deps-url]: https://david-dm.org/power-assert-js/espower-typescript
 [node-version]: https://badgen.net/npm/node/espower-typescript
-[license]: https://img.shields.io/npm/l/espower-typescript.svg
+[ts-version]: https://badgen.net/badge/typescript/%3E=2.7?icon=typescript
+[license]: https://badgen.net/npm/license/espower-typescript
