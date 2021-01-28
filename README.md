@@ -4,7 +4,7 @@
 
 [![npm version][npm-image]][npm-url]
 ![Node.js Version Support][node-version]
-[![build status][travis-image]][travis-url]
+[![build status][ci-image]][ci-url]
 [![Dependency Status][deps-image]][deps-url]
 ![License][license]
 
@@ -114,8 +114,8 @@ If `allowJs: true` in your `tsconfig.json`, assertions in `test/**/*.(js|jsx)` a
 
 [npm-image]: https://img.shields.io/npm/v/espower-typescript.svg
 [npm-url]: https://npmjs.org/package/espower-typescript
-[travis-image]: https://travis-ci.org/power-assert-js/espower-typescript.svg?branch=master
-[travis-url]: https://travis-ci.org/power-assert-js/espower-typescript
+[ci-image]: https://github.com/power-assert-js/espower-typescript/workflows/Node.js%20CI/badge.svg
+[ci-url]: https://github.com/power-assert-js/espower-typescript/actions?query=workflow%3A%22Node.js+CI%22
 [deps-image]: https://david-dm.org/power-assert-js/espower-typescript.svg
 [deps-url]: https://david-dm.org/power-assert-js/espower-typescript
 [node-version]: https://img.shields.io/badge/Node.js%20support-v8,v10,v12-brightgreen.svg
