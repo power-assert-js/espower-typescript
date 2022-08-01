@@ -1,8 +1,8 @@
 'use strict';
 
 import assert = require('assert');
-import expectPowerAssertMessage from './lib/expectPowerAssertMessage';
 import expectErrorStacksCorrect from './lib/expectErrorStacksCorrect';
+import expectPowerAssertMessage from './lib/expectPowerAssertMessage';
 import MyComponent from './lib/mycomponent';
 
 describe('espower-typescript: ts', function() {
@@ -46,10 +46,11 @@ describe('espower-typescript: ts', function() {
 
   it('jsx:react', function() {
     let expected =
-`  assert.equal(1, mycomponent_1.default())
-                  |             |         
-                  |             Object{"$$typeof":Symbol(react.element),type:"input",key:null,ref:null,props:#Object#,_owner:null,_store:#Object#}
-                  Object{default:#function#}`;
+`  assert.equal(1, (0, mycomponent_1.default)())
+                  |   |             |          
+                  |   |             #function# 
+                  |   Object{default:#function#}
+                  Object{"$$typeof":Symbol(react.element),type:"input",key:null,ref:null,props:#Object#,_owner:null,_store:#Object#}`;
     expectPowerAssertMessage(() => {
       assert.equal(1, MyComponent());
     }, expected);
